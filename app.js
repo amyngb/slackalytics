@@ -97,7 +97,7 @@ app.post('/collect', function(req, res){
 		function(error, resp, body){
 		console.log("Response: " + JSON.stringify(resp));
 		console.log("Body: " + JSON.stringify(body));
-		console.log("Error: " + JSOn.stringify(error));
+		console.log("Error: " + JSON.stringify(error));
 	})
 	res.send("OK");
 	
