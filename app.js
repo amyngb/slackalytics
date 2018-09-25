@@ -30,6 +30,7 @@ app.post('/collect', function(req, res){
 	
 	// var challenge = {'challenge': req.body.challenge};
 	// res.status(200).type('json').send(challenge);
+
 	
 	
 	console.log("Request: " + JSON.stringify(req.body));
@@ -94,9 +95,9 @@ app.post('/collect', function(req, res){
 	//Make Post Request	
 	request.post("https://www.google-analytics.com/collect?" + qs.stringify(data), 
 		function(error, resp, body){
-		console.log("Response: " + resp)
-		console.log("Body: " + body)
-		console.log("Error: " + error);
+		console.log("Response: " + JSON.stringify(resp));
+		console.log("Body: " + JSON.stringify(body));
+		console.log("Error: " + JSOn.stringify(error));
 	})
 	res.send("OK");
 	
