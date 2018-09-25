@@ -31,6 +31,31 @@ app.post('/collect', function(req, res){
 	// var challenge = {'challenge': req.body.challenge};
 	// res.status(200).type('json').send(challenge);
 	
+	
+	console.log("Request: " + JSON.stringify(req.body));
+
+	// Emoji Example Request: 
+	// {"token":"0dHwYoxzbNs4nE5DPlUVUgCc",
+	// 	"team_id":"TCR9TMHQA",
+	// 	"api_app_id":"ACSLB2B7Y",
+	// 	"event":{
+	// 		"type":"reaction_added",
+	// 		"user":"UCR6FLDAP",
+	// 		"item":{
+	// 			"type":"message",
+	// 			"channel":"CCQQEKDFA",
+	// 			"ts":"1536696271.000100"
+	// 		},
+	// 		"reaction":"sunglasses",
+	// 		"item_user":"UCR6FLDAP",
+	// 		"event_ts":"1537881959.000100"
+	// 	},
+	// 	"type":"event_callback",
+	// 	"event_id":"EvD0AK7SJ0",
+	// 	"event_time":1537881959,
+	// 	"authed_users":["UCR6FLDAP"]
+	// }
+
 	var channel = {
 		id: 	req.body.event.item.channel,
 	};
@@ -59,10 +84,11 @@ app.post('/collect', function(req, res){
 		t: 		"event",
 		ec: 	"slack: " + channel.id,
 		ea: 	"post by " + user.id,
-		ev: 	1 
+		ev: 	1, 
+		el: 	emojiName
 	};
 
-	console.log("Request: " + JSON.stringify(req.body));
+	
 	console.log("JSON.stringify data: " + JSON.stringify(data));
 	
 	//Make Post Request	
