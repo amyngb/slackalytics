@@ -62,7 +62,7 @@ app.post('/collect', function(req, res){
 		ev: 	1 
 	};
 
-	console.log("Request: " + req);
+	console.log("Request: " + req.body);
 	console.log("JSON.stringify data: " + JSON.stringify(data));
 	
 	//Make Post Request	
@@ -72,6 +72,7 @@ app.post('/collect', function(req, res){
 		console.log("Body: " + body)
 		console.log("Error: " + error);
 	})
+	res.send("OK");
 	
 });
 
