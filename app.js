@@ -78,7 +78,7 @@ app.post('/collect', function(req, res){
 		cs: 	"slack", // campaign source
 		cd1: 	user.id,
 		cd2: 	channel.id,
-		cm1: 	emojiName,
+		cm1: 	1,
 		dh:		teamDomain+".slack.com",
 		dp:		"/"+channel.id,
 		dt:		"Slack Channel: "+channel.id,
